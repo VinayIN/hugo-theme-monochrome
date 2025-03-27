@@ -1,0 +1,6 @@
+{{- with .Page.GitInfo -}}
+  {{- $format := .Page.Param "dateformat" | default ":date_long" -}}
+  {{- .AbbreviatedHash }} on {{ .AuthorDate | time.Format $format -}}
+{{- else -}}
+  {{- .Page.Lastmod | time.Format ":date_long" -}}
+{{- end -}}
