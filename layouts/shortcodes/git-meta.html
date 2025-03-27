@@ -1,7 +1,7 @@
-{{- if .Page.GitInfo -}}
-  {{- $format := .Get 0 | default ":date_long" -}}
-  {{- .Page.GitInfo.AbbreviatedHash }} on {{ .Page.GitInfo.AuthorDate | time.Format $format -}}
+{{- with .Page.GitInfo -}}
+  {{- $format := $.Get 0 | default ":date_long" -}}
+  {{- .AbbreviatedHash }} on {{ .AuthorDate | time.Format $format -}}
 {{- else -}}
-  {{- "No Git info available; last modified: " -}}
-  {{- .Page.Lastmod | time.Format ":date_long" -}}
+  {{- "No Git info; last modified: " -}}
+  {{- $.Page.Lastmod | time.Format ":date_long" -}}
 {{- end -}}
