@@ -2,7 +2,9 @@
   margin: 1.5rem 0;
   border: 2px solid var(--color-border-collapsible-menu);
   border-radius: .25rem;
-  overflow: hidden;
+  overflow: visible; // Changed from hidden to visible
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .collapsible-content-title {
@@ -66,20 +68,29 @@
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 0;
   width: 100%; /* Ensure content takes full width */
+  box-sizing: border-box;
 }
 
 .collapsible-content.expanded .collapsible-content-body {
   padding: 1rem;
-  overflow: visible;
   opacity: 1;
+  width: 100%;
+  box-sizing: border-box;
   /* max-height will be set by JavaScript */
   
   /* Ensure content inside is properly displayed */
   img, video, iframe, table {
     max-width: 100%;
+    height: auto;
   }
   
   pre {
     overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
