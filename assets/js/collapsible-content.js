@@ -20,7 +20,7 @@ function initCollapsibleContent() {
                 content.style.opacity = '0';
                 newTitle.setAttribute('aria-expanded', 'false');
             } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.maxHeight = 'none'; // Allow full height when initially expanded
                 content.style.opacity = '1';
                 newTitle.setAttribute('aria-expanded', 'true');
             }
@@ -39,9 +39,26 @@ function initCollapsibleContent() {
                 
                 // Animate the max-height property for smooth transition
                 if (container.classList.contains('expanded')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
+                    // First, temporarily set maxHeight to 'none' to calculate actual height
+                    content.style.maxHeight = 'none';
+                    content.style.display = 'block';
+                    const actualHeight = content.scrollHeight;
+                    
+                    // Reset to 0 before animation to ensure proper transition
+                    content.style.maxHeight = '0px';
+                    
+                    // Force a reflow
+                    void content.offsetHeight;
+                    
+                    // Use calculated height for animation (with a little extra padding)
+                    content.style.maxHeight = (actualHeight + 50) + 'px';
                     content.style.opacity = '1';
                     newTitle.setAttribute('aria-expanded', 'true');
+                    
+                    // After transition completes, set to 'none' to ensure all content is visible regardless of size
+                    setTimeout(function() {
+                        content.style.maxHeight = 'none';
+                    }, 350); // Wait slightly longer than the transition time (300ms)
                 } else {
                     content.style.maxHeight = '0px';
                     content.style.opacity = '0';
@@ -77,6 +94,15 @@ function logDOM() {
     });
 }
 
+// Handle window resize events to update maxHeight for expanded collapsible content
+function handleResize() {
+    const expandedContents = document.querySelectorAll('.collapsible-content.expanded .collapsible-content-body');
+    expandedContents.forEach(function(content) {
+        // Make sure expanded content is always visible regardless of window size
+        content.style.maxHeight = 'none';
+    });
+}
+
 // Run on initial load
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded - initializing collapsible content');
@@ -94,4 +120,7 @@ window.addEventListener('load', function() {
         initCollapsibleContent();
         logDOM();
     }, 100);
+    
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
 });
