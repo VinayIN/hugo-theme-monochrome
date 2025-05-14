@@ -10,6 +10,7 @@ gallery_statistic:
   value: '*value2*'
 - key: '**key3**'
   value: '*value3*'
+collapse: true
 ---
 
 * 2025/07/08 - v5.1.0 release
