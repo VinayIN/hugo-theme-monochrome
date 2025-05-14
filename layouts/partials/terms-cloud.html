@@ -1,36 +1,18 @@
 {{- $terms := .terms -}}
-{{- $sortby := .sortby | default "count" -}}
-{{- $order := .order | default "asc" -}}
-{{- if eq $sortby "count" -}}
-    {{- $terms = sort $terms "Count" $order -}}
-{{- else if eq $sortby "alphabetical" -}}
-    {{- $terms = sort $terms "Page.Title" $order -}}
-{{- end -}}
 
-{{ if $terms }}
-    {{ $fontSmall := 0.875 }}
-    {{ $fontBig := 1.6 }}
-    {{ $fontSpread := sub $fontBig $fontSmall }}
-
-    {{ $termCount := slice }}
-    {{ range $terms }}
-        {{ $termCount = append .Count $termCount }}
-    {{ end }}
-    {{ $termCount = sort $termCount }}
-
-    {{ $min := int (index $termCount 0) }}
-    {{ $max := add (int (index $termCount (sub (len $termCount) 1))) 1 }}
-
-    <div>
-        {{ range $terms }}
-            {{ $weight := div (sub (math.Log .Count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-            {{ $fontSize := (add $fontSmall (mul $fontSpread $weight)) }}
-            {{ $lineHeight := add $fontSize 0.85 }}
-
-            <a class="term-item" href="{{ .Page.RelPermalink }}" style="line-height:{{$lineHeight}}rem">
-                <span style="font-size:{{ $fontSize }}rem">{{- .Page.Title -}}</span>
-                <span style="font-size:{{ sub $fontSmall 0.2 }}rem"> ({{- .Count -}}) </span>
-            </a>
+<div class="terms-cloud">
+    {{ if not (eq (printf "%T" $terms) "<nil>") }}
+        {{ range $key, $value := $terms }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $.Data.Plural $key) }}
+                <a class="term-item" href="{{ .RelPermalink }}">
+                    <span>{{- .Title -}}</span>
+                    {{ if $.showcount }}
+                        <span class="term-count">({{ len $value }})</span>
+                    {{ end }}
+                </a>
+            {{ end }}
         {{ end }}
-    </div>
-{{ end }}
+    {{ else }}
+        <div>No terms to display</div>
+    {{ end }}
+</div>

@@ -8,14 +8,14 @@ toc: false
 ## v4.0.0 (2024/11/27)
 
 - Fixed
-  - Terms cloud overflow bug ([#57](https://github.com/kaiiiz/hugo-theme-monochrome/issues/57))
-  - Mathjax white pixels on top and bottom left of page ([#56](https://github.com/kaiiiz/hugo-theme-monochrome/issues/56))  
+  - Terms cloud overflow bug ([#57](https://github.com/VinayIN/hugo-theme-monochrome/issues/57))
+  - Mathjax white pixels on top and bottom left of page ([#56](https://github.com/VinayIN/hugo-theme-monochrome/issues/56))  
   - Change resource fingerprint from sha512 to sha256 to prevent file name too long issue during build
 - Changed
-  - **BREAKING CHANGE** The minimum hugo version requirement is now `0.128.0`. [Adjust your config's `paginate` to `pagination.pagerSize` accordingly](https://github.com/gohugoio/hugo/releases/tag/v0.128.0) ([#58](https://github.com/kaiiiz/hugo-theme-monochrome/pull/58), [#59](https://github.com/kaiiiz/hugo-theme-monochrome/pull/59), [#60](https://github.com/kaiiiz/hugo-theme-monochrome/issues/60))
+  - **BREAKING CHANGE** The minimum hugo version requirement is now `0.128.0`. [Adjust your config's `paginate` to `pagination.pagerSize` accordingly](https://github.com/gohugoio/hugo/releases/tag/v0.128.0) ([#58](https://github.com/VinayIN/hugo-theme-monochrome/pull/58), [#59](https://github.com/VinayIN/hugo-theme-monochrome/pull/59), [#60](https://github.com/VinayIN/hugo-theme-monochrome/issues/60))
 - New
-  - Add Russian translation ([#52](https://github.com/kaiiiz/hugo-theme-monochrome/pull/52))
-  - Add French (France) translation ([#54](https://github.com/kaiiiz/hugo-theme-monochrome/pull/54))
+  - Add Russian translation ([#52](https://github.com/VinayIN/hugo-theme-monochrome/pull/52))
+  - Add French (France) translation ([#54](https://github.com/VinayIN/hugo-theme-monochrome/pull/54))
 
 ---
 
@@ -24,7 +24,7 @@ toc: false
 - Fixed
   - Remove line number of code block from the site search data
 - New
-  - Support anchor link next to header elements ([#18](https://github.com/kaiiiz/hugo-theme-monochrome/issues/18))
+  - Support anchor link next to header elements ([#18](https://github.com/VinayIN/hugo-theme-monochrome/issues/18))
 
 ---
 
@@ -33,13 +33,13 @@ toc: false
 - Fixed
   - Base layout organaization for semantic elements, which may improve SEO description
   - Fix table class parsing bug
-  - Fix Balloon layout and Gallery layout page resources retrieval bug ([#50](https://github.com/kaiiiz/hugo-theme-monochrome/issues/50))
-  - Fix language dropdown menu click issue on Safari mobile ([#43](https://github.com/kaiiiz/hugo-theme-monochrome/issues/43))
-  - Fix i18n on navbar entries ([#49](https://github.com/kaiiiz/hugo-theme-monochrome/issues/49))
+  - Fix Balloon layout and Gallery layout page resources retrieval bug ([#50](https://github.com/VinayIN/hugo-theme-monochrome/issues/50))
+  - Fix language dropdown menu click issue on Safari mobile ([#43](https://github.com/VinayIN/hugo-theme-monochrome/issues/43))
+  - Fix i18n on navbar entries ([#49](https://github.com/VinayIN/hugo-theme-monochrome/issues/49))
 - Changed
   - **BREAKING CHANGE** The minimum hugo version requirement is now `0.120.0`. [Adjust your GoogleAnalytics and DisqusShortname settings accordingly](https://github.com/gohugoio/hugo/releases/tag/v0.120.0)
   - Re-implement the site search function with uFuzzy, which, in my opinion, delivers significantly more accurate search results
-  - Change sidebar control to pure CSS implementation ([#47](https://github.com/kaiiiz/hugo-theme-monochrome/issues/47))
+  - Change sidebar control to pure CSS implementation ([#47](https://github.com/VinayIN/hugo-theme-monochrome/issues/47))
   - Remove collapsible menu for mobile sidebar, as it is difficult to click on small screen
   - Hide language name on mobile view
   - Dependencies
@@ -62,28 +62,28 @@ toc: false
 ## v2.0.0 (2023/07/23)
 
 - Fixed
-  - Fix navbar item padding ([#15](https://github.com/kaiiiz/hugo-theme-monochrome/issues/15))
-  - Fix TOC collapse cursor style ([#25](https://github.com/kaiiiz/hugo-theme-monochrome/issues/25), [#36](https://github.com/kaiiiz/hugo-theme-monochrome/pull/36))
-  - Fix site search resource retrieval bug ([#29](https://github.com/kaiiiz/hugo-theme-monochrome/issues/29))
-  - Fix wrong variable in base.scss ([#44](https://github.com/kaiiiz/hugo-theme-monochrome/pull/44))
+  - Fix navbar item padding ([#15](https://github.com/VinayIN/hugo-theme-monochrome/issues/15))
+  - Fix TOC collapse cursor style ([#25](https://github.com/VinayIN/hugo-theme-monochrome/issues/25), [#36](https://github.com/VinayIN/hugo-theme-monochrome/pull/36))
+  - Fix site search resource retrieval bug ([#29](https://github.com/VinayIN/hugo-theme-monochrome/issues/29))
+  - Fix wrong variable in base.scss ([#44](https://github.com/VinayIN/hugo-theme-monochrome/pull/44))
   - Fix inappropriate navbar decoration for item that links to home page
   - Fix color scheme button FOUC bug
   - Fix twitter card text color in dark mode
 - Changed
   - **BREAKING CHANGE** The minimum hugo version requirement is now `0.112.0`
-  - **BREAKING CHANGE** Support all feather icons, `vendor="feather"` is required to migrate from old shortcode ([#19](https://github.com/kaiiiz/hugo-theme-monochrome/issues/19))
-  - Images in an article are centered by default ([#35](https://github.com/kaiiiz/hugo-theme-monochrome/issues/35))
+  - **BREAKING CHANGE** Support all feather icons, `vendor="feather"` is required to migrate from old shortcode ([#19](https://github.com/VinayIN/hugo-theme-monochrome/issues/19))
+  - Images in an article are centered by default ([#35](https://github.com/VinayIN/hugo-theme-monochrome/issues/35))
   - Term's layout now respects the `enable_group_by_year`, `enable_show_date`, `enable_pagination` parameters
   - Upgrade dependencies
     - Prism: v1.27.0 -> v1.29.0
     - Fuse.js: v6.5.3 -> v6.6.2
 - New
-  - Support custom CSS ([#23](https://github.com/kaiiiz/hugo-theme-monochrome/issues/23), [#33](https://github.com/kaiiiz/hugo-theme-monochrome/issues/33))
-  - Support GA4 ([#37](https://github.com/kaiiiz/hugo-theme-monochrome/issues/37))
-  - Support custom title for bookcase item ([#32](https://github.com/kaiiiz/hugo-theme-monochrome/issues/32))
-  - Support hiding bookcase items ([#27](https://github.com/kaiiiz/hugo-theme-monochrome/issues/27))
-  - Add default color scheme setting ([#40](https://github.com/kaiiiz/hugo-theme-monochrome/issues/40))
-  - Add `bookcase` shortcode ([#34](https://github.com/kaiiiz/hugo-theme-monochrome/issues/34))
+  - Support custom CSS ([#23](https://github.com/VinayIN/hugo-theme-monochrome/issues/23), [#33](https://github.com/VinayIN/hugo-theme-monochrome/issues/33))
+  - Support GA4 ([#37](https://github.com/VinayIN/hugo-theme-monochrome/issues/37))
+  - Support custom title for bookcase item ([#32](https://github.com/VinayIN/hugo-theme-monochrome/issues/32))
+  - Support hiding bookcase items ([#27](https://github.com/VinayIN/hugo-theme-monochrome/issues/27))
+  - Add default color scheme setting ([#40](https://github.com/VinayIN/hugo-theme-monochrome/issues/40))
+  - Add `bookcase` shortcode ([#34](https://github.com/VinayIN/hugo-theme-monochrome/issues/34))
   - Add `recent-posts` shortcode
   - Add an RSS button next to the title in the term's layout
 
@@ -93,7 +93,7 @@ toc: false
 
 ### Fixed
 
-* Fix `img` style issue, it should be `max-width` instead of `width` ([#10](https://github.com/kaiiiz/hugo-theme-monochrome/issues/10#issuecomment-1086111789))
+* Fix `img` style issue, it should be `max-width` instead of `width` ([#10](https://github.com/VinayIN/hugo-theme-monochrome/issues/10#issuecomment-1086111789))
 
 ---
 
@@ -173,7 +173,7 @@ toc: false
 * Change: font-size of html is changed from `18px` to `16px`
 * Add: `breadcrumbs` shortcode
 * Add: list layout properties `group_by_year` and `show_date`
-* Fix: terms-cloud typo ([#4](https://github.com/kaiiiz/hugo-theme-monochrome/pull/4))
+* Fix: terms-cloud typo ([#4](https://github.com/VinayIN/hugo-theme-monochrome/pull/4))
 
 ---
 

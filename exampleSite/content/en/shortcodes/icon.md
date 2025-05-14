@@ -47,13 +47,13 @@ Icons from [Simple icons](https://simpleicons.org/)
 ## Examples
 
 ```html
-{{</* icon vendor="feather" name="github" link="https://github.com/kaiiiz/hugo-theme-monochrome" */>}}
+{{</* icon vendor="feather" name="github" link="https://github.com/VinayIN/hugo-theme-monochrome" */>}}
 ```
 
-{{< icon vendor="feather" name="github" link="https://github.com/kaiiiz/hugo-theme-monochrome" >}}
+{{< icon vendor="feather" name="github" link="https://github.com/VinayIN/hugo-theme-monochrome" >}}
 
 ```html
-{{</* icon vendor="simple" name="github" link="https://github.com/kaiiiz/hugo-theme-monochrome" */>}}
+{{</* icon vendor="simple" name="github" link="https://github.com/VinayIN/hugo-theme-monochrome" */>}}
 ```
 
-{{< icon vendor="simple" name="github" link="https://github.com/kaiiiz/hugo-theme-monochrome" >}}
+{{< icon vendor="simple" name="github" link="https://github.com/VinayIN/hugo-theme-monochrome" >}}

@@ -30,7 +30,7 @@ theme = "hugo-theme-monochrome"
 Hostname (and path) to the root.
 
 ```toml
-baseURL = "https://kaiiiz.github.io/hugo-theme-monochrome"
+baseURL = "https://VinayIN.github.io/hugo-theme-monochrome"
 ```
 
 ## favicon
