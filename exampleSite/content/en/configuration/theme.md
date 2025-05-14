@@ -46,6 +46,11 @@ Collapsible global settings.
 enable_collapsible_toc = false # default: false
 enable_collapsible_changelogs = false # default: false
 ```
+
+## Collapsible Content
+
+Individual pages can have collapsible content by setting `collapse: true` in their front matter. check the [Balloon Layout Demo](layouts/balloon/demo/single) and [Bookcase Layout Demo](layouts/bookcase/demo/regular-page/) for practical examples.
+
 ## Navbar menu
 
 Monochrome uses built-in menu system supported by hugo itself. (Checkout [document](https://gohugo.io/content-management/menus) for more deatil.) By default, the menu called `navbar` is used to decide which item need to be rendered on the navbar.
@@ -254,4 +259,4 @@ color_scheme = "dark" # "light" or "dark"
 
 You can insert your custom code in `<head>` section using the `/layouts/partials/user_head.html` file.
 
-This is useful for inject third-partiy libraries (e.g. Google Ads) or your custom script. 
+This is useful for inject third-partiy libraries (e.g. Google Ads) or your custom script.

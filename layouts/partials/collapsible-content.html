@@ -1,0 +1,12 @@
+{{ $content := .content }}
+{{ $title := .title }}
+{{ $collapsed := .collapsed | default true }}
+
+<div class="collapsible-content {{ if $collapsed }}collapsed{{ else }}expanded{{ end }}">
+    <button class="collapsible-content-title" aria-expanded="{{ if $collapsed }}false{{ else }}true{{ end }}">
+        {{ $title }}
+    </button>
+    <div class="collapsible-content-body">
+        {{ $content | safeHTML }}
+    </div>
+</div>

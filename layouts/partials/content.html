@@ -8,5 +8,10 @@
         {{ $content = $content | replaceRE "<pre>" "<pre class=\"language-text\">" }}
         {{ $content = $content | replaceRE "<pre([^>]*)class=\"([^>]*)\"([^>]*)>" "<pre$1 class=\"mc-prism hide $2\" $3>" }}
     {{ end }}
-    {{ $content | safeHTML }}
+    
+    {{ if $ctx.Params.collapse }}
+        {{ partial "collapsible-content.html" (dict "title" $ctx.Title "content" $content "collapsed" true) }}
+    {{ else }}
+        {{ $content | safeHTML }}
+    {{ end }}
 </article>

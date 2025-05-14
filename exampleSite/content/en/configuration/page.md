@@ -108,6 +108,19 @@ collapsible_changelogs: false
 
 > default: theme's [`enable_collapsible_changelogs`](/hugo-theme-monochrome/configuration/theme/#collapsible-menu)
 
+## Collapsible Content
+
+You can make the entire content of a page collapsible by setting the `collapse` parameter to `true` in the page's front matter. When this is enabled, the page title will be shown and users can click on it to expand or collapse the content.
+
+```yaml
+---
+title: 'My Collapsible Page'
+collapse: true
+---
+```
+
+> default: false
+
 ## External library
 
 ### MathJax

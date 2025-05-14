@@ -7,6 +7,15 @@
 {{- end -}}
 <script defer src="{{ $header_js.RelPermalink }}" integrity="{{- $header_js.Data.Integrity -}}"></script>
 
+{{/*  Collapsible Content  */}}
+{{ $collapsible_content_js := resources.Get "js/collapsible-content.js" }}
+{{- if hugo.IsProduction -}}
+    {{ $collapsible_content_js = $collapsible_content_js | js.Build (dict "minify" true) | resources.Fingerprint "sha256" -}}
+{{- else -}}
+    {{ $collapsible_content_js = $collapsible_content_js | js.Build -}}
+{{- end -}}
+<script defer src="{{ $collapsible_content_js.RelPermalink }}" integrity="{{- $collapsible_content_js.Data.Integrity -}}"></script>
+
 {{/*  Zooming.js  */}}
 {{ if (.Scratch.Get "params").enable_zooming_js }}
     {{ $zooming_js := resources.Get "js/zooming.js" }}
