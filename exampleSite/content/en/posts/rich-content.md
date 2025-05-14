@@ -19,7 +19,11 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 
 ---
 
+<<<<<<< HEAD
 ## X Simple Shortcode
+=======
+## X (formerly Twitter) Shortcode
+>>>>>>> 9a9b239 (improved with a readme)
 
 {{< x user="designreviewed" id="1085870671291310081" >}}
 

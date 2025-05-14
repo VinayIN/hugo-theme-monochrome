@@ -64,7 +64,7 @@ The cover image URL relative to the base URL. (with or without `/` prefix)
 For example:
 
 ```
-https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
+https://VinayIN.github.io/hugo-theme-monochrome/thanks.jpg
         \_____________________________________/\________/
                     base URL              bookcase_cover_src
 ```
@@ -86,7 +86,7 @@ The dark mode cover image URL relative to the base URL. (with or without `/` pre
 For example:
 
 ```
-https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
+https://VinayIN.github.io/hugo-theme-monochrome/thanks.jpg
         \_____________________________________/\________/
                     base URL              bookcase_cover_src
 ```

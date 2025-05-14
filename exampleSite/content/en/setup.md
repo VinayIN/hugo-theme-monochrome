@@ -31,7 +31,7 @@ hugo new site <project name>
 ```bash
 cd <project name>
 git init
-git submodule add https://github.com/kaiiiz/hugo-theme-monochrome.git themes/hugo-theme-monochrome
+git submodule add https://github.com/VinayIN/hugo-theme-monochrome.git themes/hugo-theme-monochrome
 ```
 
 Then add `theme = "hugo-theme-monochrome"` to your `hugo.toml`
@@ -66,7 +66,7 @@ hugo --environment production --minify
 
 Push `/public` folder to your server.
 
-> For reference, this site is built by using Github Action and Github Pages. The CI script is available [here](https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/.github/workflows/gh-pages.yml).
+> For reference, this site is built by using Github Action and Github Pages. The CI script is available [here](https://github.com/VinayIN/hugo-theme-monochrome/blob/main/.github/workflows/gh-pages.yml).
 
 #### Deployment on github
 
@@ -92,7 +92,7 @@ Error: Process completed with exit code 255.
 ## Run exampleSite
 
 ```bash
-git clone https://github.com/kaiiiz/hugo-theme-monochrome
+git clone https://github.com/VinayIN/hugo-theme-monochrome
 cd hugo-theme-monochrome/exampleSite
 hugo --themesDir=../.. server
 ```

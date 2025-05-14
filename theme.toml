@@ -1,13 +1,13 @@
 name = "Monochrome"
 license = "MIT"
-licenselink = "https://github.com/kaiiiz/hugo-theme-monochrome/blob/main/LICENSE"
+licenselink = "https://github.com/VinayIN/hugo-theme-monochrome/blob/main/LICENSE"
 description = "Monochrome is a clean, responsive, and programmer-friendly hugo theme"
-homepage = "https://github.com/kaiiiz/hugo-theme-monochrome/"
-demosite = "https://kaiiiz.github.io/hugo-theme-monochrome/"
-tags = ["blog", "responsive", "dark", "light", "multilingual"]
-features = ["Clean UI with small resources", "Responsive layout", "Dark mode", "Multiple layouts built-in", "Nested navbar", "Multilingual mode", "Syntax Highlighting with copy feature", "Site Search", "SEO-friendly", "MathJax Integration", "Useful shortcodes"]
-min_version = "0.80.0"
+homepage = "https://github.com/VinayIN/hugo-theme-monochrome/"
+demosite = "https://github.com/VinayIN/hugo-theme-monochrome/"
+tags = ["blog", "responsive", "dark", "light", "bilingual"]
+features = ["Clean UI with small resources", "Responsive layout", "Dark mode", "Multiple layouts built-in", "Nested navbar", "English and German language support", "Syntax Highlighting with copy feature", "Site Search", "SEO-friendly", "MathJax Integration", "Useful shortcodes"]
+min_version = "0.128.0"
 
 [author]
-  name = "You-Kai Zheng"
-  homepage = "https://github.com/kaiiiz/"
+  name = "Vinay"
+  homepage = "https://github.com/VinayIN/"

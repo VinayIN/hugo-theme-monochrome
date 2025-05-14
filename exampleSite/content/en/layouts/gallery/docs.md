@@ -30,7 +30,7 @@ Content resources. URL can be an absolute path (with `/` prefix, relative to bas
 For example:
 
 ```
-https://kaiiiz.github.io/hugo-theme-monochrome/about
+https://VinayIN.github.io/hugo-theme-monochrome/about
         \____________________________________/\____/
                     base URL           gallery_resources
 ```
@@ -66,7 +66,7 @@ Link of the title.
 
 ```yaml
 ---
-gallery_title_link: 'https://github.com/kaiiiz'
+gallery_title_link: 'https://github.com/VinayIN'
 ---
 ```
 
@@ -79,7 +79,7 @@ Image URL relative to the base URL. (with or without `/` prefix)
 For example:
 
 ```
-https://kaiiiz.github.io/hugo-theme-monochrome/thanks.jpg
+https://VinayIN.github.io/hugo-theme-monochrome/thanks.jpg
         \_____________________________________/\________/
                     base URL                gallery_img_src
 ```
@@ -98,7 +98,7 @@ Link of the image.
 
 ```yaml
 ---
-gallery_img_link: 'https://github.com/kaiiiz'
+gallery_img_link: 'https://github.com/VinayIN'
 ---
 ```
 

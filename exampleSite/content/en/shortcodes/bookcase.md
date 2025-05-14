@@ -19,7 +19,7 @@ Render bookcase layout
 For example:
 
 ```
-https://kaiiiz.github.io/hugo-theme-monochrome/configuration
+https://VinayIN.github.io/hugo-theme-monochrome/configuration
         \____________________________________/\____________/
                     base URL                   section path
 ```
