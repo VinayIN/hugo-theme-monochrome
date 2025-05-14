@@ -1,0 +1,7 @@
+"tags" = "Schlagwörter"
+"recent_posts" = "Aktuelle Beiträge"
+"toc" = "Inhaltsverzeichnis"
+"no_page_under_resouces" = 'Es gibt keine Seite unter {{ .resources_path }}. Sie müssen "{{ .resources_name }}" korrekt angeben und die Existenz von Beiträgen in diesem Ordner überprüfen.'
+"resources_not_found" = 'Ressourcen nicht gefunden. Sie müssen "{{ .resources_name }}" korrekt angeben.'
+"search" = "Beiträge durchsuchen"
+"changelogs" = "Änderungsprotokoll"

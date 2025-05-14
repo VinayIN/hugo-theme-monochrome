@@ -1,4 +1,5 @@
 {{- $terms := .terms -}}
+<<<<<<< HEAD:layouts/_partials/terms-cloud.html
 {{- $sortby := .sortby | default "count" -}}
 {{- $order := .order | default "asc" -}}
 {{- with $terms -}}
@@ -30,6 +31,22 @@
                 <span style="font-size:{{ $fontSize }}rem">{{- .Page.Title -}}</span>
                 <span style="font-size:{{ sub $fontSmall 0.2 }}rem"> ({{- .Count -}}) </span>
             </a>
+=======
+
+<div class="terms-cloud">
+    {{ if not (eq (printf "%T" $terms) "<nil>") }}
+        {{ range $key, $value := $terms }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $.Data.Plural $key) }}
+                <a class="term-item" href="{{ .RelPermalink }}">
+                    <span>{{- .Title -}}</span>
+                    {{ if $.showcount }}
+                        <span class="term-count">({{ len $value }})</span>
+                    {{ end }}
+                </a>
+            {{ end }}
+>>>>>>> 9a9b239 (improved with a readme):layouts/partials/terms-cloud.html
         {{ end }}
-    </div>
-{{ end }}
+    {{ else }}
+        <div>No terms to display</div>
+    {{ end }}
+</div>
