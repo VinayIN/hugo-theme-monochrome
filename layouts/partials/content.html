@@ -10,7 +10,7 @@
     {{ end }}
     
     {{ if $ctx.Params.collapse }}
-        {{ partial "collapsible-content.html" (dict "title" $ctx.Title "content" $content "collapsed" true) }}
+        {{ partial "collapsible-content.html" (dict "title" "Click to view the content" "content" $content "collapsed" true) }}
     {{ else }}
         {{ $content | safeHTML }}
     {{ end }}

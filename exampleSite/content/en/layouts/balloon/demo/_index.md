@@ -11,5 +11,3 @@ weight: 10
 ---
 
 Balloon layout is useful for demonstrating information step-by-step.
-
-[Go to single page demo](layouts/balloon/demo/single)

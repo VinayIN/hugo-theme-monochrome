@@ -49,7 +49,15 @@ enable_collapsible_changelogs = false # default: false
 
 ## Collapsible Content
 
-Individual pages can have collapsible content by setting `collapse: true` in their front matter. check the [Balloon Layout Demo](layouts/balloon/demo/single) and [Bookcase Layout Demo](layouts/bookcase/demo/regular-page/) for practical examples.
+Individual pages can have collapsible content by setting `collapse: true` in their front matter.
+
+```yaml
+---
+title: some title
+collapse: true
+---
+```
+
 
 ## Navbar menu
 

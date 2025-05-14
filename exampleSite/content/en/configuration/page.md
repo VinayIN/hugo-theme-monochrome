@@ -110,7 +110,7 @@ collapsible_changelogs: false
 
 ## Collapsible Content
 
-You can make the entire content of a page collapsible by setting the `collapse` parameter to `true` in the page's front matter. When this is enabled, the page title will be shown and users can click on it to expand or collapse the content.
+You can make the entire content of a page collapsible by setting the `collapse` parameter to `true` in the page's front matter. When this is enabled, a "Click to view the content" button will be shown, and the content will be initially collapsed. Users can click on this button to expand or collapse the content.
 
 ```yaml
 ---
@@ -118,6 +118,12 @@ title: 'My Collapsible Page'
 collapse: true
 ---
 ```
+
+This feature is particularly useful for:
+- FAQ pages where you want to show only questions initially
+- Documentation with lengthy sections that might be overwhelming
+- Long lists that can be expanded when needed
+- Content that benefits from progressive disclosure
 
 > default: false
 
