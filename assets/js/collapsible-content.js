@@ -18,10 +18,12 @@ function initCollapsibleContent() {
             if (container.classList.contains('collapsed')) {
                 content.style.maxHeight = '0px';
                 content.style.opacity = '0';
+                content.style.overflow = 'hidden';
                 newTitle.setAttribute('aria-expanded', 'false');
             } else {
                 content.style.maxHeight = 'none'; // Allow full height when initially expanded
                 content.style.opacity = '1';
+                content.style.overflow = 'visible';
                 newTitle.setAttribute('aria-expanded', 'true');
             }
             
@@ -39,10 +41,10 @@ function initCollapsibleContent() {
                 
                 // Animate the max-height property for smooth transition
                 if (container.classList.contains('expanded')) {
-                    // First, temporarily set maxHeight to 'none' to calculate actual height
-                    content.style.maxHeight = 'none';
+                    // First ensure content is visible for calculation
                     content.style.display = 'block';
-                    const actualHeight = content.scrollHeight;
+                    content.style.width = '100%';
+                    content.style.overflow = 'hidden'; // Keep overflow hidden during animation
                     
                     // Reset to 0 before animation to ensure proper transition
                     content.style.maxHeight = '0px';
@@ -50,16 +52,21 @@ function initCollapsibleContent() {
                     // Force a reflow
                     void content.offsetHeight;
                     
-                    // Use calculated height for animation (with a little extra padding)
-                    content.style.maxHeight = (actualHeight + 50) + 'px';
+                    // Get actual dimensions
+                    const actualHeight = content.scrollHeight;
+                    
+                    // Use calculated height for animation (with extra padding to avoid truncation)
+                    content.style.maxHeight = (actualHeight + 100) + 'px';
                     content.style.opacity = '1';
                     newTitle.setAttribute('aria-expanded', 'true');
                     
-                    // After transition completes, set to 'none' to ensure all content is visible regardless of size
+                    // After transition completes, set to 'none' to ensure all content is visible
                     setTimeout(function() {
                         content.style.maxHeight = 'none';
+                        content.style.overflow = 'visible'; // Allow overflow after animation
                     }, 350); // Wait slightly longer than the transition time (300ms)
                 } else {
+                    content.style.overflow = 'hidden';
                     content.style.maxHeight = '0px';
                     content.style.opacity = '0';
                     newTitle.setAttribute('aria-expanded', 'false');
@@ -98,8 +105,9 @@ function logDOM() {
 function handleResize() {
     const expandedContents = document.querySelectorAll('.collapsible-content.expanded .collapsible-content-body');
     expandedContents.forEach(function(content) {
-        // Make sure expanded content is always visible regardless of window size
+        // Ensure expanded content is always fully visible
         content.style.maxHeight = 'none';
+        content.style.overflow = 'visible';
     });
 }
 
