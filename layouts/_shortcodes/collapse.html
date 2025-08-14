@@ -1,0 +1,17 @@
+{{/* collapse shortcode: usage
+
+{{< collapse title="Click to view the content" collapsed=true >}}
+Your hidden content here...
+{{< /collapse >}}
+
+Params:
+- title (string): header shown on the collapsible
+- collapsed (bool): whether the content starts collapsed (default: true)
+*/}}
+
+{{- $title := .Get "title" | default "Click to view the content" -}}
+{{- $collapsed := .Get "collapsed" | default true -}}
+{{- $content := .Inner | markdownify -}}
+
+{{ partial "collapsible-content.html" (dict "title" $title "content" $content "collapsed" $collapsed) }}
+

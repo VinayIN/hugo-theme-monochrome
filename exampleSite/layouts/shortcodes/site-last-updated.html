@@ -1,0 +1,26 @@
+{{/* site-last-updated shortcode (exampleSite-local copy) */}}
+{{- $fmt := .Get 0 | default "January 2, 2006" -}}
+{{- $latest := time.AsTime "1970-01-01T00:00:00Z" -}}
+{{- $found := false -}}
+
+{{- range .Site.Pages -}}
+  {{- $d := .Lastmod -}}
+  {{- with .GitInfo -}}
+    {{- if gt .AuthorDate $d -}}
+      {{- $d = .AuthorDate -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $found -}}
+    {{- $latest = $d -}}
+    {{- $found = true -}}
+  {{- else if gt $d $latest -}}
+    {{- $latest = $d -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if not $found -}}
+  {{- $latest = now -}}
+{{- end -}}
+
+{{- time.Format $fmt $latest -}}
+

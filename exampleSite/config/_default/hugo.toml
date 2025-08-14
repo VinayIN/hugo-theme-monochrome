@@ -19,6 +19,11 @@ series = "series"
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
-[modules]
+[module]
     [[module.imports]]
-       # path = "github.com/VinayIN/hugo-theme-monochrome"
+       path = "github.com/VinayIN/hugo-theme-monochrome"
+
+    # Use the parent directory as the module source during local development
+    replacements = [
+        "github.com/VinayIN/hugo-theme-monochrome => .."
+    ]
