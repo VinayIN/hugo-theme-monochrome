@@ -1,6 +1,0 @@
-{{/* collapse shortcode (exampleSite-local copy) */}}
-{{- $title := .Get "title" | default "Click to view the content" -}}
-{{- $collapsed := .Get "collapsed" | default true -}}
-{{- $content := .Inner | markdownify -}}
-{{ partial "collapsible-content.html" (dict "title" $title "content" $content "collapsed" $collapsed) }}
-
