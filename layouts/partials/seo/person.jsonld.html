@@ -1,0 +1,56 @@
+{{- $p := .Site.Params.seo_person -}}
+{{- if $p -}}
+{{- $data := dict "@context" "https://schema.org" "@type" "Person" -}}
+{{- with $p.name -}}
+  {{- $data = merge $data (dict "name" .) -}}
+{{- end -}}
+{{- with $p.url -}}
+  {{- $data = merge $data (dict "url" .) -}}
+{{- end -}}
+{{- with $p.jobTitle -}}
+  {{- $data = merge $data (dict "jobTitle" .) -}}
+{{- end -}}
+{{- with $p.description -}}
+  {{- $data = merge $data (dict "description" .) -}}
+{{- end -}}
+{{- with $p.email -}}
+  {{- $email := printf "mailto:%s" . -}}
+  {{- $data = merge $data (dict "email" $email) -}}
+{{- end -}}
+{{- $addr := dict -}}
+{{- with $p.addressLocality -}}
+  {{- $addr = merge $addr (dict "addressLocality" .) -}}
+{{- end -}}
+{{- with $p.addressCountry -}}
+  {{- $addr = merge $addr (dict "addressCountry" .) -}}
+{{- end -}}
+{{- if gt (len $addr) 0 -}}
+  {{- $addr = merge (dict "@type" "PostalAddress") $addr -}}
+  {{- $data = merge $data (dict "address" $addr) -}}
+{{- end -}}
+{{- with $p.alumniOf -}}
+  {{- $alumni := dict "@type" "CollegeOrUniversity" "name" . -}}
+  {{- $data = merge $data (dict "alumniOf" $alumni) -}}
+{{- end -}}
+{{- with $p.affiliation -}}
+  {{- $affs := slice -}}
+  {{- range . -}}
+    {{- $affs = $affs | append (dict "@type" "Organization" "name" .) -}}
+  {{- end -}}
+  {{- if gt (len $affs) 0 -}}
+    {{- $data = merge $data (dict "affiliation" $affs) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $p.knowsAbout -}}
+  {{- if gt (len .) 0 -}}
+    {{- $data = merge $data (dict "knowsAbout" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- with $p.sameAs -}}
+  {{- if gt (len .) 0 -}}
+    {{- $data = merge $data (dict "sameAs" .) -}}
+  {{- end -}}
+{{- end -}}
+<script type="application/ld+json">{{ $data | jsonify }}</script>
+{{- end -}}
+
