@@ -1,0 +1,54 @@
+// General table styling for all tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-border);
+  
+  // Header styling
+  thead {
+    background-color: var(--color-background-overlay);
+    
+    th {
+      padding: 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 2px solid var(--color-border);
+    }
+  }
+  
+  // Body styling
+  tbody {
+    tr {
+      border-bottom: 1px solid var(--color-border);
+      
+      &:hover {
+        background-color: var(--color-background-hover);
+      }
+    }
+    
+    td {
+      padding: 0.75rem;
+      vertical-align: top;
+      border-right: 1px solid var(--color-border);
+      
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 0.85rem;
+    
+    thead th,
+    tbody td {
+      padding: 0.6rem;
+    }
+  }
+}

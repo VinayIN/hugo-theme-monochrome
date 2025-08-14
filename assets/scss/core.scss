@@ -9,13 +9,14 @@
 @import 'vars';
 
 @import 'base';
-@import 'layout/article';
-@import 'layout/bookcase';
-@import 'layout/gallery';
-@import 'layout/balloon';
-@import 'layout/list';
-@import 'layout/postcard';
-@import 'layout/term';
+@import "layout/article";
+@import "layout/balloon";
+@import "layout/bookcase";
+@import "layout/gallery";
+@import "layout/list";
+@import "layout/postcard";
+@import "layout/term";
+@import "layout/tables";
 @import 'components/button';
 @import 'components/header';
 @import 'components/footer';
