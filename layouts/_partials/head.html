@@ -65,4 +65,7 @@
     {{ if templates.Exists "_partials/user_head.html" -}}
         {{ partial "user_head.html" . }}
     {{- end }}
+
+    {{/* Inject Person JSON-LD for SEO */}}
+    {{ partial "seo/person.jsonld.html" . }}
 </head>
