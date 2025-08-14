@@ -1,26 +1,15 @@
-{{- $fmt := .Get 0 | default "January 2, 2006" -}}
-{{- $latest := time.AsTime "1970-01-01T00:00:00Z" -}}
-{{- $found := false -}}
-
-{{/* Consider all pages, including headless */}}
-{{- range .Site.Pages -}}
-  {{- $d := .Lastmod -}}
-  {{- with .GitInfo -}}
-    {{- if gt .AuthorDate $d -}}
-      {{- $d = .AuthorDate -}}
-    {{- end -}}
-  {{- end -}}
-  {{- if not $found -}}
-    {{- $latest = $d -}}
-    {{- $found = true -}}
-  {{- else if gt $d $latest -}}
-    {{- $latest = $d -}}
-  {{- end -}}
-{{- end -}}
-
-{{- if not $found -}}
-  {{- $latest = now -}}
-{{- end -}}
-
-{{ time.Format $fmt $latest }}
-
+{{- $fmt := .Get 0 | default "January 2, 2006" -}} {{- $with_commit := .Get 1
+-}} {{/* Try to read git info from data file first */}} {{- $git_data :=
+.Site.Data.git_info -}} {{- $latest := now -}} {{- $commit_hash := "" -}} {{- if
+$git_data -}} {{/* Parse the git date - use dateFormat to avoid timezone issues
+*/}} {{- $latest = now.AddDate 0 0 -365 -}} {{- with $git_data.date -}} {{-
+$latest = (time .) -}} {{- end -}} {{- $commit_hash = $git_data.short_commit -}}
+{{- else -}} {{/* Fallback to GitInfo if data file not available */}} {{- $found
+:= false -}} {{- range .Site.Pages -}} {{- $d := .Lastmod -}} {{- with .GitInfo
+-}} {{- if gt .AuthorDate $d -}} {{- $d = .AuthorDate -}} {{- $commit_hash =
+substr .Hash 0 7 -}} {{- end -}} {{- end -}} {{- if not $found -}} {{- $latest =
+$d -}} {{- $found = true -}} {{- else if gt $d $latest -}} {{- $latest = $d -}}
+{{- end -}} {{- end -}} {{- end -}} {{/* Format the output */}} {{-
+$formatted_date := time.Format $fmt $latest -}} {{- if and $with_commit
+$commit_hash -}} {{- printf "%s (commit %s)" $formatted_date $commit_hash -}}
+{{- else -}} {{- $formatted_date -}} {{- end -}}

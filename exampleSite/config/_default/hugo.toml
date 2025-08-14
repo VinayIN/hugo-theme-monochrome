@@ -20,5 +20,5 @@ series = "series"
 home = ["HTML", "RSS", "JSON"]
 
 [module]
-    [[module.imports]]
-       path = "github.com/VinayIN/hugo-theme-monochrome"
+[[module.imports]]
+path = "github.com/VinayIN/hugo-theme-monochrome"
