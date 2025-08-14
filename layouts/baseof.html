@@ -29,9 +29,8 @@
                     {{ partial "collapsible-menu.html" (dict "type" "changelogs" "context" . "enable" $enable_collapsible_changelogs) }}
                 {{ end }}
 
-                {{- block "content" . }}{{- end }}
+{{- block "content" . }}{{- end }}
 
-<<<<<<< HEAD:layouts/baseof.html
                 {{ if eq .Kind "page" }}
                     {{ if (.Params.disqus | default .Site.Config.Services.Disqus.Shortname) }}
                         {{- partial "disqus-wrapper.html" . -}}
@@ -44,10 +43,6 @@
 
                 {{ if templates.Exists "_partials/user_content_end.html" -}}
                     {{ partial "user_content_end.html" . }}
-=======
-                {{ if templates.Exists "partials/user_content_end.html" -}}
-                    {{ partial "partials/user_content_end.html" . }}
->>>>>>> 9a9b239 (improved with a readme):layouts/_default/baseof.html
                 {{- end }}
             </div>
         </main>
