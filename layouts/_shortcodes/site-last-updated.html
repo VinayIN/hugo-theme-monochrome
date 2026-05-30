@@ -1,6 +1,6 @@
 {{- $fmt := .Get 0 | default "January 2, 2006" -}} {{- $with_commit := .Get 1
 -}} {{/* Try to read git info from data file first */}} {{- $git_data :=
-.Site.Data.git_info -}} {{- $latest := now -}} {{- $commit_hash := "" -}} {{- if
+hugo.Data.git_info -}} {{- $latest := now -}} {{- $commit_hash := "" -}} {{- if
 $git_data -}} {{/* Parse the git date - use dateFormat to avoid timezone issues
 */}} {{- $latest = now.AddDate 0 0 -365 -}} {{- with $git_data.date -}} {{-
 $latest = (time .) -}} {{- end -}} {{- $commit_hash = $git_data.short_commit -}}
