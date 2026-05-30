@@ -156,5 +156,4 @@ Temporary Items
 .vscode
 
 # Ignore Hugo generated resources
-exampleSite/resources/
 resources/
