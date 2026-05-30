@@ -158,3 +158,7 @@ Temporary Items
 .hugo_build.lock
 
 .vscode
+
+# Ignore Hugo generated resources
+exampleSite/resources/
+resources/
